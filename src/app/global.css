@@ -3,5 +3,5 @@
 @tailwind utilities;
     
 @layer base {
-    .btn { @apply bg-[#D6517D] rounded-[5px] text-white cursor-pointer font-medium p-[15px] mx-0 my-[15px] shadow-lg } 
+  .btn { @apply bg-[#D6517D] rounded-[5px] text-white cursor-pointer font-medium p-[15px] mx-0 my-[15px] shadow-lg } 
 };
