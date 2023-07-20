@@ -1,0 +1,12 @@
+{
+    "name": "Robô Futurista",
+    "description": "Robô Futurista Em Uma Guerra",
+    "rarity": "Legend",
+    "image": "https://violet-tiny-ocelot-777.mypinata.cloud/ipfs/QmSEfxmyEWSHUyucUeBBX2rdfMi36QKW9TWttb2XQwJiRf",
+    "attributes" : [
+        {
+            "trait_type": "Robô",
+            "value": "Legend"
+        }
+    ]
+}

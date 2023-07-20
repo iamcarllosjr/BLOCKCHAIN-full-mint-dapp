@@ -1,16 +1,16 @@
 import "./global.css";
 import { Metadata } from "next";
-import { Sofia_Sans } from "next/font/google";
+import { Press_Start_2P } from "next/font/google";
 import { ReactNode } from "react";
 
-const Sofia = Sofia_Sans({
+const Start = Press_Start_2P({
   subsets: ["latin"],
   variable: "--sofia_sans",
-  weight: ["200", "300", "400"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
-  title: "Create Next App",
+  title: "Full Mint Website",
   description: "This site was created using the NextJS framework 🚀",
 };
 
@@ -21,7 +21,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className={Sofia.className}>{children}</body>
+      <body className={Start.className}>{children}</body>
     </html>
   );
 }
