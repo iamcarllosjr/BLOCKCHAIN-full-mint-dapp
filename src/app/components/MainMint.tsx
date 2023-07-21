@@ -68,7 +68,7 @@ const MainMint = ({ accounts }: MintProps) => {
         <div>
           <h1 className="flex justify-center text-4xl">RoboPunks</h1>
           <p className="mx-4 flex-wrap pt-2 text-center tracking-wide">
-            Its 2078. Can the robopunks NFT save humans from destructive rampant
+            Its 2077. Can the robopunks NFT save humans from destructive rampant
             NFT speculation ? Mint Robopunks to find out.
           </p>
         </div>
