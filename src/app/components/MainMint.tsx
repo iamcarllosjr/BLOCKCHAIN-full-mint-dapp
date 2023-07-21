@@ -9,7 +9,7 @@ type MintProps = {
   accounts: string;
 };
 
-const roboPunksNFTAddress = "0x815FDb7023a73013BEeACA4d74a56D6C1a19711a";
+const roboPunksNFTAddress = "0x62c08ff19CAbdAd440492C88d8D25AE28dFa0B7F";
 const uri =
   "https://violet-tiny-ocelot-777.mypinata.cloud/ipfs/QmZmUTkHDZZattfy3W4izVJ5BX2sj5sBi4YzuFjNnoVR5j";
 
@@ -42,10 +42,11 @@ const MainMint = ({ accounts }: MintProps) => {
         console.log("wait a moment");
 
         await mintTxn.wait();
+        const minted = mintTxn.hash;
+        alert(`nft minted at ${minted}`);
 
-        console.log("mined ", mintTxn.hash);
-
-        console.log("nft minted!");
+        //console.log("mined ", mintTxn.hash);
+        // console.log("nft minted!");
       }
     } catch (error) {
       console.log(error);
