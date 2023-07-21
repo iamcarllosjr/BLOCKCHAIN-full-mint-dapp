@@ -45,8 +45,8 @@ const MainMint = ({ accounts }: MintProps) => {
         const minted = mintTxn.hash;
         alert(`nft minted at ${minted}`);
 
-        //console.log("mined ", mintTxn.hash);
-        // console.log("nft minted!");
+        console.log("mined ", mintTxn.hash);
+        console.log("nft minted!");
       }
     } catch (error) {
       console.log(error);
