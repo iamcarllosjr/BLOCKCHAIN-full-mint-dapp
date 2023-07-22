@@ -35,11 +35,12 @@ const MainMint = ({ accounts }: MintProps) => {
         // console.log("address roboPunks", roboPunksNFTAddress);
         // console.log("minting NFT..");
 
-        const mintTxn = await mintNFT.safeMint(accounts[0], mintAmount, uri, {
+        const mintTxn = await mintNFT.safeMint(accounts, mintAmount, uri, {
           value: BigInt("20000000000000000") * BigInt(mintAmount),
         });
 
-        console.log("wait a moment");
+        alert("Minting em processamento");
+        // console.log("wait a moment");
 
         await mintTxn.wait();
         const minted = mintTxn.hash;
@@ -49,7 +50,7 @@ const MainMint = ({ accounts }: MintProps) => {
         console.log("nft minted!");
       }
     } catch (error) {
-      console.log(error);
+      alert("Você excedeu o limite permitido por Wallet");
     }
   };
 
