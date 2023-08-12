@@ -15,6 +15,7 @@ const uri =
 
 const MainMint = ({ accounts }: MintProps) => {
   const [mintAmount, setMintAmout] = useState(1);
+  const [message, setMessage] = useState("");
   const isConnected = Boolean(accounts);
 
   console.log(accounts);
@@ -29,28 +30,24 @@ const MainMint = ({ accounts }: MintProps) => {
           roboPunksNFT.abi,
           signer,
         );
-        // console.log("provider", provider);
-        // console.log("signer", signer);
-        // console.log("mint", mintNFT);
-        // console.log("address roboPunks", roboPunksNFTAddress);
-        // console.log("minting NFT..");
+
+        setMessage("Minting em processamento");
 
         const mintTxn = await mintNFT.safeMint(accounts, mintAmount, uri, {
           value: BigInt("20000000000000000") * BigInt(mintAmount),
         });
 
-        alert("Minting em processamento");
-        // console.log("wait a moment");
+        //console.log("Minting em processamento");
 
         await mintTxn.wait();
         const minted = mintTxn.hash;
-        alert(`nft minted at ${minted}`);
+        setMessage(`NFT mintado, confira o hash ${minted}`);
 
         console.log("mined ", mintTxn.hash);
         console.log("nft minted!");
       }
     } catch (error) {
-      alert("Você excedeu o limite permitido por Wallet");
+      setMessage("Você excedeu o limite permitido por Wallet");
     }
   };
 
@@ -102,6 +99,7 @@ const MainMint = ({ accounts }: MintProps) => {
             >
               Mint Now
             </button>
+            <span className="flex pt-3 text-white">{message}</span>
           </div>
         ) : (
           <p className="mx-4 mt-[70px] flex items-center justify-center text-center font-[25px] tracking-wider text-[#D6517D]">
