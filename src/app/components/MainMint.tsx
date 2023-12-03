@@ -49,7 +49,7 @@ const MainMint = ({ accounts }: MintProps) => {
     } catch (err) {
       if (isError(err, "CALL_EXCEPTION")) {
       // The Type Guard has validated this object
-      console.log(err.data); //revert, O erro de reversão integrado ou personalizado, se disponível
+      alert(err.data); //revert, O erro de reversão integrado ou personalizado, se disponível
       }
     }
   };
