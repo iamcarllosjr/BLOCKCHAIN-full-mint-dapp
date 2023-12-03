@@ -3,7 +3,7 @@ import React from "react";
 
 import roboPunksNFT from "../abi/abi.json";
 
-import { ethers } from "ethers";
+import { ethers, CallExceptionError, isError } from "ethers";
 
 type MintProps = {
   accounts: string;
@@ -46,8 +46,11 @@ const MainMint = ({ accounts }: MintProps) => {
         console.log("mined ", mintTxn.hash);
         console.log("nft minted!");
       }
-    } catch (error) {
-      setMessage("Você excedeu o limite permitido por Wallet");
+    } catch (err) {
+      if (isError(err, "CALL_EXCEPTION")) {
+      // The Type Guard has validated this object
+      console.log(err.data); //revert, O erro de reversão integrado ou personalizado, se disponível
+      }
     }
   };
 
